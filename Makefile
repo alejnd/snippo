@@ -1,0 +1,33 @@
+#
+# Makefile
+#
+
+CC     = gcc
+CFLAGS = -g
+OBJS   = packetBuilder.o devConfig.o ui.o connections.o filter.o
+LIBC   = curses
+
+# targets
+all: sniffer
+
+clean:
+	rm -f *.o
+
+# implicit rules
+.c.o:
+	$(CC) $(CFLAGS) -c -o$@ $<
+     
+# explicit rules
+sniffer: $(OBJS) sniffer.c
+	$(CC) sniffer.c -o sniffer $(OBJS) -l$(LIBC)
+	  
+# dependencies
+packetStruct.o: packetStruct.c
+
+devConfig.o: devConfig.c
+
+ui.o: ui.c
+
+connections.o: connections.c
+
+filter.o: filter.c

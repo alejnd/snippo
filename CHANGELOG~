@@ -1,0 +1,8 @@
+
+ - Arreglado el problema con el modo promiscuo... ¡¡marditos punteros!!
+
+- Arreglado el segfault de el datadump en printTCPData () ... ¡¡marditos
+parentesis!!
+
+- "r" ahora es "refresh"... de una forma un tanto cutre.
+
